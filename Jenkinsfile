@@ -24,19 +24,20 @@ pipeline {
         stage("Test") {
             when {
                 expression {
-                    params.executeTests == true
+                    params.executeTests
+                }
+            }
+            steps {
+                script {
+                    gv.testApp
                 }
             }
         }
-            steps {
-                echo 'Building the application...'
-    }
-}
         stage("Deploy") {
             steps {
                 script {
                     gv.deployApp()
-                echo "Deploying version ${params.VERSION}"
+                }
             }
         }
     }
