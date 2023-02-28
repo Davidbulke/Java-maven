@@ -2,7 +2,7 @@ import com.example.Apllication;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class MyApp {
+public class my-app {
     public static void main(String[] args) {
         // Initialize the application
         Application app = new Application();
